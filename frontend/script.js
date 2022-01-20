@@ -1,54 +1,26 @@
-/* const data = [
-    "Gergely Kiss",
-    "Krisztian Bui",
-    "Bucko Balazs",
-    "Andras Varga",
-    "Borbala Terez Kovacs"
-];
- */
 
-const data = [
-    {
-        name: "Gergely Kiss",
-        favoriteFood: "csirke/rizs"
-    },
-    {
-        name: "Andras Varga",
-        favoriteFood: "brassoi"
-    },
-    {
-        name: "Balazs Bucko",
-        favoriteFood: "kolbaszos rajas pizza"
-    },
-    {
-        name: "Krisztian Bui",
-        favoriteFood: "banan"
-    },
-    {
-        name: "Borbala Terez Kovacs",
-        favoriteFood: "avokado"
-    },
-    {
-        name: "Benett Viszokai",
-        favoriteFood: "alma"
-    },
-    {
-        name: "Krisztian Porneszi",
-        favoriteFood: "almaspite"
-    },
-]
-function loadEvent() {
+
+async function loadEvent() {
     console.log("My page is loaded")
     
     const root = document.querySelector("#root")
 
-    for (const frontendStudent of data) {
-       root.insertAdjacentHTML("beforeend", `
+    const countryRes = await fetch("https://restcountries.com/v3.1/all");
+    const countryArr = await countryRes.json();
+
+    //console.log(countryArr[0].name.common)
+
+    for (const country of countryArr) {
+        //console.log(country.name.common);
+        
+        root.insertAdjacentHTML("beforeend", `
             <section>
-                <h1>${frontendStudent.name}</h1>
-                <p>${frontendStudent.favoriteFood}</p>
+                <h1>${country.name.common}</h1>
+                <p>${country.region}</p>
             </section>
-        `) 
+        `)
+        
     }
+
 }
 window.addEventListener("load", loadEvent )
