@@ -1,8 +1,9 @@
-body{
+body {
     padding: 0;
     margin: 0;
 }
-section{
+
+section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +13,9 @@ section{
     color: white;
     font-family: 'Poppins', sans-serif;
 }
-h1,p{
+
+h1,
+p {
     font-family: 'Poppins', sans-serif;
     font-weight: 100;
 }
