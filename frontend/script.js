@@ -1,5 +1,3 @@
-
-
 async function loadEvent() {
     console.log("My page is loaded")
     
