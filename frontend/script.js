@@ -37,6 +37,7 @@ const data = [
         favoriteFood: "almaspite"
     },
 ]
+
 function loadEvent() {
     console.log("My page is loaded")
     
